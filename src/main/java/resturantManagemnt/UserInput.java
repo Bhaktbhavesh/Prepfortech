@@ -35,26 +35,46 @@ public class UserInput {
                    break;
                }
                case("#2") :{
-                   System.out.println("Give Ingrediants");
+                   System.out.println("Get Ingrediants");
                    String name=scan.nextLine() ;
-                   System.out.println("Give Ingrediants Qunatity");
+                   System.out.println("Get Qunatity");
                    String quantity= scan.nextLine();
                    InventoryManagement.OrderSpecificIngredaints(name,quantity);
                    break;
                }
-               case("#4") :{
+                case("#3") :{
+                   // OrderManagement.PlaceOder("Sandwich",5);
+                    break;
+                }
+
+                case("#4") :{
                    AccountManagement.getTotalExpenses();
                    break;
                }
+               case("#5") :{
+                   AccountManagement.getNetProfit();
+                   break;
+                 }
+               case("#6") :{
+                   System.out.println("Get Dish");
+                   String dishname=scan.nextLine() ;
+                   System.out.println("Get Qunatity");
+                   String quantity= scan.nextLine();
+                   int dishqunatity= Integer.parseInt(quantity);
+                   OrderManagement neworder=new OrderManagement();
+                   neworder.Order(dishname,dishqunatity) ;
+                   break;
+               }
+
                case("#7") :{
                     return ;
                }
                default:{
-                   System.out.println("INVALID Input");
+                   System.out.println("Invalid Input");
                    break;
                }
            }
 
-        } ;
+        } 
     }
 }

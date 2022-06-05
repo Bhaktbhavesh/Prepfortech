@@ -17,13 +17,13 @@ public class InputReader {
     }
 
     public static void updateReceipe(String recipe) {
-        HashMap recipename= new HashMap<>();
+        HashMap<String,Double> recipename= new HashMap<>();
         //while (recipe!=null) {
            // System.out.println(recipe);
             String[] arrvals = recipe.split(" ");
             double price = Double.parseDouble((arrvals[arrvals.length - 1]));
             for (int i = 1; i < arrvals.length-1; i += 2) {
-                recipename.put(arrvals[i], arrvals[i + 1]);
+                recipename.put(arrvals[i],Double.valueOf(arrvals[i + 1]));
              }
             for (Receipe itr: Receipe.values()) {
                if(arrvals[0].equalsIgnoreCase(itr.name())){
